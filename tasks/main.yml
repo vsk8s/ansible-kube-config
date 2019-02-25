@@ -1,0 +1,20 @@
+---
+
+- name: Create directory
+  become: True
+  file:
+    name: "{{ kube_config_path | dirname }}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0750
+
+- name: Configure file
+  become: True
+  template:
+    src: kubeconfig.j2
+    dest: "{{ kube_config_path }}"
+    owner: root
+    group: root
+    mode: 0644
+
