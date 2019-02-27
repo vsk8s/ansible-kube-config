@@ -3,6 +3,7 @@
 kube_config_path: "changeme"
 kube_config_user: "user"
 kube_config_cluster: "cluster"
+kube_config_server: "example.com"
 kube_config_cert: "changeme"
 kube_config_key: "changeme"
 kube_config_ca: "changeme"
