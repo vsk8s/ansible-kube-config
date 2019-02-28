@@ -5,8 +5,8 @@
   file:
     name: "{{ kube_config_path | dirname }}"
     state: directory
-    owner: root
-    group: root
+    owner: "{{ kube_config_owner }}"
+    group: "{{ kube_config_group }}"
     mode: 0750
 
 - name: Configure file
@@ -14,7 +14,7 @@
   template:
     src: kubeconfig.j2
     dest: "{{ kube_config_path }}"
-    owner: root
-    group: root
+    owner: "{{ kube_config_owner }}"
+    group: "{{ kube_config_group }}"
     mode: 0644
 
